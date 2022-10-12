@@ -17,21 +17,7 @@ const PlayersList = () => {
             </div>
             <div className='list-items'>
                 <Player/>
-                <Player/>
-                <Player/>
-                <Player/>
-                <Player/>
-                <Player/>
-                <Player/>
-                <Player/>
-                <Player/>
-                <Player/>
-                <Player/>
-                <Player/>
-                <Player/>
-                <Player/>
-                <Player/>
-                <Player/>
+
             </div>
         </div>
     );

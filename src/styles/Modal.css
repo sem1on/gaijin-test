@@ -1,0 +1,95 @@
+.madal {
+    width: 400px;
+    height: 600px;
+    background-color: #393E46;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    border-radius: 20px;
+}
+
+.madal-title {
+    color: #00ADB5;
+    padding: 20px;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.modal-input {
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    border-color: #00ADB5;
+    background-color: #222831;
+    color: #00ADB5;
+}
+
+.modal-input::placeholder{
+    color: #00ADB5;
+}
+
+.modal-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.modal-descr {
+    font-size: 18px;
+    color: #00ADB5;
+    margin-right: 10px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.modal-frak-slct {
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    border-color: #00ADB5;
+    background-color: #222831;
+    color: #00ADB5;
+}
+
+.modal-skill { 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.modal-skill-items{
+    width: 320px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-skill-label {
+    font-size: 15px;
+    color: #00ADB5;
+    margin-left: 5px;
+}
+
+.modal-prem {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.modal-prem-iput {
+    margin-left: 20px;
+}
+
+.form-btn{
+    min-width: 100px;
+    height: 50px;
+    padding: 10px;
+    background-color: #222831;
+    color: #00ADB5;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    transition: all .5s;
+}
+
+.form-btn:hover {
+    box-shadow: 0px 0px 20px #00ADB5;
+}
