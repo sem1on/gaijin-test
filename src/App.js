@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
+import PlayersList from './components/PlayersList';
 
 function App() {
   return (
-    <div>
+    <div className='app'>
         <Navbar/>
+        <PlayersList/>
     </div>
   );
 }

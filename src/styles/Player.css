@@ -1,0 +1,28 @@
+.player-header {
+    display: flex;
+    justify-content: space-around;
+    width: 1080px;
+    margin-top: 15px;
+    border: 1px solid #393E46;
+    border-radius: 10px;   
+}
+.player-header:hover {
+    box-shadow: 0px 0px 20px #00ADB5;
+}
+
+.player-desc {
+    width: 180px;
+    text-align: center;
+    color: #00ADB5;
+    padding: 10px;
+}
+
+.player-btn {
+    background: none;
+    border: none;
+    color: #00ADB5;
+    cursor: pointer;
+}
+.player-btn:hover {
+    text-shadow: 0px 0px 20px #00ADB5;
+}
