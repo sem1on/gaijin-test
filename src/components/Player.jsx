@@ -2,18 +2,18 @@ import React from 'react';
 
 import '../styles/Player.css';
 
-const Player = () => {
+const Player = ( {onModal, player, onRemove } ) => {
     return (
         <div className='player-header'>
-            <div className='player-desc'>Имя</div>
-            <div className='player-desc'>Фракция</div>
-            <div className='player-desc'>Уровень</div>
-            <div className='player-desc'>Скил</div>
-            <div className='player-desc'>Пpемиум</div>
+            <div className='player-desc'>{player.name}</div>
+            <div className='player-desc'>{player.frak}</div>
+            <div className='player-desc'>{player.level}</div>
+            <div className='player-desc'>{player.skill}</div>
+            <div className='player-desc'>{player.prem}</div>
             <div className='player-desc'>
-                <button className='player-btn'>Изменить </button>
+                <button onClick={onModal} className='player-btn'>Изменить </button>
                 <span> / </span>
-                <button className='player-btn'> Удалить</button>
+                <button onClick={() => onRemove(player)} className='player-btn'> Удалить</button>
             </div>
         </div>
     );

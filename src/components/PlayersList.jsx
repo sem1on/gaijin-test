@@ -3,7 +3,8 @@ import React from 'react';
 import '../styles/PlayersList.css';
 import Player from './Player';
 
-const PlayersList = () => {
+const PlayersList = ({ onModal, players, onRemove }) => {
+
     return (
         <div className='players-list'>
             <h1 className='list-title'>Список игроков</h1>
@@ -15,12 +16,17 @@ const PlayersList = () => {
                 <div className='list-desc'>Пpемиум</div>
                 <div className='list-desc'>Изменить/Удалить</div>
             </div>
-            <div className='list-items'>
-                <Player/>
-
-            </div>
+            {players.length ? 
+                <div className='list-items'>
+                    {players.map((player) => (
+                        <Player onModal={onModal} player={player} key={player.id} onRemove={onRemove}/>
+                    ))}
+                </div>
+                :
+                <div className='list-desc' style={{ marginTop: '50px'}}> Игроков пока нет... </div>
+            }
         </div>
-    );
+    );  
 };
 
 export default PlayersList;
