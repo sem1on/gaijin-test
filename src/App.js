@@ -1,33 +1,35 @@
-import React, { useState } from 'react';
-import './App.css';
-import Modal from './components/Modal';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
+import { AuthContext } from './context/context';
+
 import Navbar from './components/Navbar';
-import PlayersList from './components/PlayersList';
+import AppRouter from './components/AppRouter';
+
+import './App.css';
+
 
 const App = () => {
 
-    const [players, setPlayers] = useState([])
-    const [modalActive, setModalActive] = useState(false);
+    const [isAuth, setIsAuth] = useState(false);
 
-    const onModal = () => {
-        setModalActive(!modalActive);
-    };
-
-    const onAdd = (newPlayer) => {
-        setPlayers([...players, newPlayer]);
-        setModalActive(false);
-    };
-
-    const onRemove = (player) => {
-        setPlayers(players.filter(p => p.id !== player.id))
-    }
+    useEffect(() => {
+        if(localStorage.getItem('auth')){
+            setIsAuth(true)
+        };
+    }, []);
 
     return (
-        <div className='app'>
-            <Navbar onModal={onModal}/>
-            <PlayersList onModal={onModal} players={players} onRemove={onRemove}/>
-            <Modal modalActive={modalActive} onModal={onModal} onAdd={onAdd}/>
-        </div>
+
+        <AuthContext.Provider value={{
+            isAuth,
+            setIsAuth,
+        }}>
+            <BrowserRouter>
+                <Navbar/>
+                <AppRouter/>
+            </BrowserRouter>
+        </AuthContext.Provider>
     );
 }
 

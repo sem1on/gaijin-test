@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { AuthContext } from '../context/context';
 
 import '../styles/Navbar.css';
 
-const Navbar = ({ onModal }) => {
+
+const Navbar = () => {
+
+    const {setIsAuth} = useContext(AuthContext);
+
+    const logOut = () => {
+        setIsAuth(false);
+        localStorage.setItem('auth', 'false')
+    }
+
     return (
         <div className='navbar'>
-            <button onClick={onModal} className='add-btn'>Добавить игрока</button>
-            <button className='login-btn'>Выйти</button>
+            <button onClick={logOut} className='login-btn'>Выйти</button>
         </div>
     );
 };
